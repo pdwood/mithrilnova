@@ -14,43 +14,66 @@
 				color: #00edf0;
 			}
 		</style>
+		<script type="text/javascript">
+			function getPanelNumber(){
+				//var oldSrc = document.getElementById('panel').src;
+				//alert(oldSrc);
+				//return parseInt(oldSrc.substring(oldSrc.lastIndexOf('/')+1,oldSrc.lastIndexOf('.')));
+				var url = window.location.href;
+				var number = parseInt(url.substring(url.lastIndexOf('=')+1));
+				//alert(number);
+				if(isNaN(number)){
+					number = 1;
+				}
+				//alert(number);
+				return number;
+			}
+			function derp(){
+				document.getElementById('derp').innerHTML += "derp";
+			}
+			function setPanel(panel){
+				//alert("setting panel to "+panel);
+				document.getElementById('panel').src = panel + ".gif";
+				document.getElementById("jump").elements[0].value = panel;
+			}
+			//function next(){
+			//	return (getPanelNumber()+1) + ".gif";
+			//}
+			function changePanel(offset){
+				window.location.href = "?panel="+(getPanelNumber()+offset);
+			}
+			function jump(){
+				setPanel(document.getElementById("jump").elements[0].value);
+			}
+			//function getCurrentPanel(){
+			//	return getPanelNumber()+".gif";
+			//}
+			function loadPanel(){
+				//alert("loading panel");
+				setPanel(getPanelNumber());
+			}
+			window.onload = loadPanel;
+		</script>
 	</head>
 	<body style="background-color:#575757">
 	<!-- Probably should have a header here -->
 	
 	<script>
-		function getPanelNumber(){
-			var oldSrc = document.getElementById('panel').src;
-			//alert(oldSrc);
-			return parseInt(oldSrc.substring(oldSrc.lastIndexOf('/')+1,oldSrc.lastIndexOf('.')));
-		}
-		function derp(){
-			document.getElementById('derp').innerHTML += "derp";
-		}
-		function setPanel(panel){
-			document.getElementById('panel').src = panel + ".gif";
-			document.getElementById("jump").elements[0].value = panel;
-		}
-		function changePanel(offset){
-			setPanel(getPanelNumber()+offset);
-		}
-		function jump(){
-			setPanel(document.getElementById("jump").elements[0].value);
-		}
+		
 	</script>
 	<h1> This is an webcomic </h1>
 	<div align=center>
 		<p id=derp>?</p>
 		<img id=panel src="1.gif" alt="more panels coming soon">
 		<br>
-		<button type="button" onclick="changePanel(1)" style="background:#00b6b6">Next Panel</button>
+		<button type="button" onclick="changePanel(1)" style="background:#00b6b6">Next Panel</button> <!--a href="javascript:changePanel(1)">Next panel</a-->
 		<br><br>
 		<button type="button" onclick="changePanel(-1)">Previous Panel</button>
 		<!--button type="button" onclick="setPanel(1)">First Panel</button-->
 		<button type="button" onclick="derp()">derp</button>
 		<br>
 		<form id="jump">
-			<input id="gotopanel" type="number" name="gotopanel" min="1" value="1" style="width:3em">
+			<input id="gotopanel" type="number" name="panel" min="1" value="1" style="width:3em">
 			<input type="button" onclick="jump()" value="Go to panel">
 		<p class=small>
 			<a href="about.html">What is this, anyway?</a>
