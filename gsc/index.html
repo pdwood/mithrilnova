@@ -4,15 +4,21 @@
 		<link rel="stylesheet" type="text/css" href="gsc.css">
 		<script type="text/javascript">
 			function getPanelNumber(){
-				var oldSrc = document.getElementById('panel').src;
-				return parseInt(oldSrc.substring(oldSrc.lastIndexOf('/')+1,oldSrc.lastIndexOf('.')));
+				var src = document.getElementById('panel').src;
+				return parseInt(src.substring(src.lastIndexOf('/')+1,src.lastIndexOf('.')));
 			}
 			function derp(){
 				document.getElementById('derp').innerHTML += "derp";
 			}
+			function getText(){
+				//what I want to say is something like
+				//that thing.id.sethtml(this file.txt)
+				//
+			}
 			function setPanel(panel){
 				document.getElementById('panel').src = panel + ".gif";
 				document.getElementById("jump").elements[0].value = panel;
+				//document.getElementById("comictext").src = panel + ".html";
 				document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/?panel="+getPanelNumber();
 				document.getElementById("permalink").href = "?panel="+getPanelNumber();
 			}
@@ -37,7 +43,7 @@
 	<body style="background-color:#575757">
 	<!-- Probably should have a header here -->
 
-	<h1> This is an webcomic </h1>
+	<h1>This is an webcomic</h1>
 	<div align=center>
 		<p id=derp>?</p>
 		<img id=panel src="1.gif" alt="more panels coming soon">
