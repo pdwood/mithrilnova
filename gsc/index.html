@@ -26,10 +26,7 @@
 			function init(){
 				var url = window.location.href;
 				var number = parseInt(url.substring(url.lastIndexOf('=')+1));
-				if(isNaN(number)){
-					number = 1;
-				}
-				setPanel(number);
+				setPanel(isNaN(number)?1:number);
 			}
 			function keyRespond(e){
 				if(!e) e=window.event;
@@ -40,7 +37,7 @@
 			document.onkeydown = keyRespond;
 		</script>
 	</head>
-	<body style="background-color:#575757">
+	<body style="background-color:#575757"> <!-- Move this to the CSS as soon as I can figure out how -->
 	<!-- Probably should have a header here -->
 
 	<h1>This is an webcomic</h1>
