@@ -1,46 +1,12 @@
 <html>
 	<head>
 		<title>this is a webcomic?</title>
-		<link rel="stylesheet" type="text/css" href="gsc.css">
-		<script type="text/javascript">
-			function getPanelNumber(){
-				var src = document.getElementById('panel').src;
-				return parseInt(src.substring(src.lastIndexOf('/')+1,src.lastIndexOf('.')));
-			}
-			function derp(){
-				document.getElementById('derp').innerHTML += "derp";
-			}
-			function setPanel(panel){
-				document.getElementById('panel').src = panel + ".gif";
-				document.getElementById("jump").elements[0].value = panel;
-				//document.getElementById("comictext").src = panel + ".html";
-				document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/?panel="+getPanelNumber();
-				document.getElementById("permalink").href = "?panel="+getPanelNumber();
-			}
-			function changePanel(offset){
-				setPanel(getPanelNumber()+offset);
-			}
-			function jump(){
-				setPanel(document.getElementById("jump").elements[0].value);
-			}
-			function init(){
-				var url = window.location.href;
-				var number = parseInt(url.substring(url.lastIndexOf('=')+1));
-				setPanel(isNaN(number)?1:number);
-			}
-			function keyRespond(e){
-				if(!e) e=window.event;
-				if(e.keyCode == 37) changePanel(-1);
-				else if (e.keyCode == 39) changePanel(1);
-			}
-			window.onload = init;
-			document.onkeydown = keyRespond;
-		</script>
+        <link rel="stylesheet" type="text/css" href="../gsc.css">
+		<script type="text/javascript" src="gscnav.js"></script>
 	</head>
-	<body style="background-color:#575757"> <!-- Move this to the CSS as soon as I can figure out how -->
 	<!-- Probably should have a header here -->
 
-	<h1>This is an webcomic</h1>
+	<h1 style="padding-left:10%">This is an webcomic</h1>
 	<div align=center>
 		<p id=derp>?</p>
 		<img id=panel src="1.gif" alt="more panels coming soon">
