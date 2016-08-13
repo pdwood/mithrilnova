@@ -1,0 +1,13 @@
+Warpage Beta v0.1.2
+Copyright 2013-2014 Peter Wood / MithrilNova Studios
+
+INSTRUCTIONS
+
+Prior to playing the game, ensure that the "data" folder has been extracted from the zip folder (along with the file labeled "WarpageBetaV012.jar"), to ensure the game will be able to load the necessary image files.
+
+On startup, a dialog box will appear asking for the name of a world. To load a previous world, type in that world's name. If there is no world found with the given name, a new one will be created.
+
+Move the player character with the WASD keys. Use Q and E (or scroll wheel) to cycle through inventory. Press Enter to save the game. Press S (Down) to enter portals and put on held equipment.
+Click tiles to pick them up. (Some tiles can only be collected if a certain tool is held.) Click empty spaces to place a tile from the inventory. Some tiles can be right-clicked to do various actions (e.g. opening and closing doors, carving stones with a chisel)
+
+Click an option on the menu on the right side of the screen to convert tiles into other tiles. Certain tiles will change these options when right-clicked (such as the anvil or the kiln).
