@@ -1,7 +1,7 @@
 <style type="text/css">
     p.small {font-size: 12pt}
 	p.normal {
-		font-family: Nyala;
+		font-family: Nyala, sans-serif;
 		font-size: 18pt;
 		color: #00b6b7;
 	}
@@ -9,16 +9,17 @@
 		background-color: #575757;
 	}
 	h1 {
-		font-family: Nyala;
+		font-family: Nyala, sans-serif;
 		color: #00edf0;
 		text-align: center;
 	}
     h2 {
-		font-family: Nyala;
+		font-family: Nyala, sans-serif;
 		text-align: left;
 		color: #00edf0;
 	}
 	a.homepage-button:link, a.homepage-button:visited {
+		font-family: Nyala, sans-serif;
 		color: #383972;
 		border: 4px outset #008788;
 		background: linear-gradient(#00edf0 0%, #00fcff 20%, #00d2d4 100%);
