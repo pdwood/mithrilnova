@@ -40,7 +40,7 @@ import static tile.Player.PIXELS_PER_STEP;
 
 //TODO BEFORE NEXT LAUNCH: Fix cursor alignment
 public class TileWorld extends Component implements ActionListener{
-	private static boolean DEBUG=true;
+	private static boolean DEBUG=false;
 	private static final long serialVersionUID = 1L;
 	public static final int SCREEN_WIDTH=60, TOTAL_WIDTH=600, SCREEN_HEIGHT=60, TOTAL_HEIGHT=240, TILE_SIZE=12, STEPS_PER_TILE=4;
 	public static boolean filesIncorrect;//This is set to true if the graphics for the game cannot be found
@@ -259,8 +259,9 @@ public class TileWorld extends Component implements ActionListener{
 			//Inventory.change(Tile.fragmentedPortal,1);
 			Inventory.getTool(new Tool(Tool.Type.stoneAxe));
 		}
-		if(DEBUG){
-			JOptionPane.showMessageDialog(this, "Debug mode is ON. If you downloaded this from the MithrilNova website, we messed up.\nPlease contact MithrilNova studios.");
+		if(Util.getProperty("debug").equals("true")){
+			DEBUG=true;
+			JOptionPane.showMessageDialog(this, "Debug mode is ON. This may have unintended consequences. Edit your warpage.properties file to correct this.");
 		}
 		Util.beginMusic(currDim);
 		requestFocusInWindow();
