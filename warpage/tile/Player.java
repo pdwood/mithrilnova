@@ -8,7 +8,7 @@ import gui.TileWorld;
 import gui.Inventory;
 
 public class Player extends Creature{
-	public static final int MAX_HEALTH=20, STEP=TileWorld.TILE_SIZE/4;
+	public static final int MAX_HEALTH=20, PIXELS_PER_STEP=TileWorld.TILE_SIZE/TileWorld.STEPS_PER_TILE;
 	private int jumps;//tracks upward momentum
 	private boolean noGravity;//if this is true the player will not fall
 	public Player(TileWorld tw){
@@ -18,33 +18,33 @@ public class Player extends Creature{
 	public void move(){//this method is called each tick.
 		if(jumps>10){//move faster if jumping higher
 			jumps--;
-			move(0, -STEP*2);
+			move(0, -PIXELS_PER_STEP*2);
 		}
 		else if(jumps>0){//move up if there is upward momentum
 			jumps--;
-			move(0, -STEP);
+			move(0, -PIXELS_PER_STEP);
 		}
 		/*else if(Inventory.getActiveTile()==Equippable.cape){ the removed cape item slowed falling rate
 			move(0, 3);
 		}*/
 		else if(noGravity){
 		noGravity=false;
-		}else move(0, STEP);//fall if there is no upward momentum
+		}else move(0, PIXELS_PER_STEP);//fall if there is no upward momentum
 
 	}
 	public void move(int x, int y){//because the superclass method calls canMove() and that messed up the stairs
 		TileWorld tw=getTW();
 		goTo(getX()+x,getY());//to bypass stairs.
 		super.move(0, y);
-		if(x<0&&tw.getXOffset()>0&&getX()-(tw.getXOffset()*STEP)<=5*TileWorld.TILE_SIZE){
-			tw.changeXOffset(x/STEP);			
-		}else if(x>0&&tw.getXOffset()/4+TileWorld.SCREEN_WIDTH<TileWorld.TOTAL_WIDTH&&getX()-(tw.getXOffset()*STEP)>=(TileWorld.SCREEN_WIDTH-5)*TileWorld.TILE_SIZE){
-			tw.changeXOffset(x/STEP);
+		if(x<0&&tw.getXOffset()>0&&getX()-(tw.getXOffset()*PIXELS_PER_STEP)<=5*TileWorld.TILE_SIZE){
+			tw.changeXOffset(x/PIXELS_PER_STEP);
+		}else if(x>0&&tw.getXOffset()/4+TileWorld.SCREEN_WIDTH<TileWorld.TOTAL_WIDTH&&getX()-(tw.getXOffset()*PIXELS_PER_STEP)>=(TileWorld.SCREEN_WIDTH-5)*TileWorld.TILE_SIZE){
+			tw.changeXOffset(x/PIXELS_PER_STEP);
 		}
-		if(y<0&&tw.getYOffset()>0&&getY()-(tw.getYOffset()*STEP)<=5*TileWorld.TILE_SIZE){
-			tw.changeYOffset(y/STEP);
-		}else if(y>0&&tw.getYOffset()/4+TileWorld.SCREEN_HEIGHT<TileWorld.TOTAL_HEIGHT&&getY()-(tw.getYOffset()*STEP)>=(TileWorld.SCREEN_HEIGHT-5)*TileWorld.TILE_SIZE){
-			tw.changeYOffset(y/STEP);
+		if(y<0&&tw.getYOffset()>0&&getY()-(tw.getYOffset()*PIXELS_PER_STEP)<=5*TileWorld.TILE_SIZE){
+			tw.changeYOffset(y/PIXELS_PER_STEP);
+		}else if(y>0&&tw.getYOffset()/4+TileWorld.SCREEN_HEIGHT<TileWorld.TOTAL_HEIGHT&&getY()-(tw.getYOffset()*PIXELS_PER_STEP)>=(TileWorld.SCREEN_HEIGHT-5)*TileWorld.TILE_SIZE){
+			tw.changeYOffset(y/PIXELS_PER_STEP);
 		}
 		tw.getPointer().updateXY();
 	}

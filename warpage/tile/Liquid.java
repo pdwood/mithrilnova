@@ -2,6 +2,7 @@ package tile;
 
 import gui.TileWorld;
 
+@Deprecated
 public class Liquid{
 	public static int MAX_DEPTH = TileWorld.TILE_SIZE;
 	private int d;

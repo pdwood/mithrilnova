@@ -20,7 +20,7 @@ import javax.swing.JFrame;
 public class SandLauncher{
 	public static void main(String[] args){
 		JPanel content = new JPanel();
-		final JFrame frame = new JFrame("Warpage - Version Canonical Beta");
+		final JFrame frame = new JFrame("Warpage - Canonical Beta Version");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new FlowLayout());
 		frame.setVisible(true);

@@ -11,7 +11,7 @@ import javax.swing.SwingUtilities;
 import java.awt.event.MouseAdapter;
 import static gui.TileWorld.TILE_SIZE;
 public class Cursor extends MouseAdapter{
-	private int trueX,trueY;
+	private int screenX,screenY;
 	private int x;
 	private int y;
 	private TileWorld tw;
@@ -27,8 +27,8 @@ public class Cursor extends MouseAdapter{
 		return x;
 	}
 	public void updateXY(){
-		x = (trueX + (tw.getXOffset()*TILE_SIZE/4)%TILE_SIZE) / TILE_SIZE;
-		y = (trueY + (tw.getYOffset()*TILE_SIZE/4)%TILE_SIZE) / TILE_SIZE;
+		x = (screenX + (tw.getXOffset()*TILE_SIZE/4)%TILE_SIZE) / TILE_SIZE;
+		y = (screenY + (tw.getYOffset()*TILE_SIZE/4)%TILE_SIZE) / TILE_SIZE;
 	}
 	public int getY(){
 		return y;
@@ -38,12 +38,13 @@ public class Cursor extends MouseAdapter{
 	}
 	@Override
 	public void mouseMoved(MouseEvent e){
-		trueX=e.getX();
-		trueY=e.getY();
+		screenX=e.getX();
+		screenY=e.getY();
 		updateXY();
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		System.out.println("click");
 		Inventory.getConvPane().setCraftMethod(null);
 		tw.respond(x,y,SwingUtilities.isRightMouseButton(e));
 	}

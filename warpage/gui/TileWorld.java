@@ -33,22 +33,22 @@ import javax.swing.Timer;
 import misc.Util;
 
 import tile.*;
-import static tile.Player.STEP;
+import static tile.Player.PIXELS_PER_STEP;
 
 //TODO wiring?
 //TODO limited durability for shields
 
 //TODO BEFORE NEXT LAUNCH: Fix cursor alignment
 public class TileWorld extends Component implements ActionListener{
-	private static boolean DEBUG=false;
+	private static boolean DEBUG=true;
 	private static final long serialVersionUID = 1L;
-	public static final int SCREEN_WIDTH=60, TOTAL_WIDTH=600, SCREEN_HEIGHT=60, TOTAL_HEIGHT=240, TILE_SIZE=12;
+	public static final int SCREEN_WIDTH=60, TOTAL_WIDTH=600, SCREEN_HEIGHT=60, TOTAL_HEIGHT=240, TILE_SIZE=12, STEPS_PER_TILE=4;
 	public static boolean filesIncorrect;//This is set to true if the graphics for the game cannot be found
 	private int xOffset,yOffset;//The x-coordinate offset, expressed in units of STEP pixels.
 	public static final int NUM_DIMS = 3;//How many dimensions the world contains
 	private String name; //world filename
 	private Tile[][][] tiles;
-	private Liquid[][][] liquids;
+	//private Liquid[][][] liquids;
 	private Player player;
 	private Timer timer;
 	private int time;
@@ -71,7 +71,7 @@ public class TileWorld extends Component implements ActionListener{
 	private static Image healthImg=Util.loadImg("health");
 	public TileWorld(){
 		tiles = new Tile[NUM_DIMS][TOTAL_WIDTH][TOTAL_HEIGHT];
-		liquids=new Liquid[NUM_DIMS][TOTAL_WIDTH][TOTAL_HEIGHT];
+		//liquids=new Liquid[NUM_DIMS][TOTAL_WIDTH][TOTAL_HEIGHT];
 		xOffset=0;
 		yOffset=0;
 	}
@@ -336,7 +336,7 @@ public class TileWorld extends Component implements ActionListener{
 			case 2:{//snow/mountains
 				int mountainDelta=(int)((Math.random()+Math.random())*5)-5; //change y of terrain by -5 to +5
 				y+=mountainDelta;
-				System.out.println(mountainDelta);
+				//System.out.println(mountainDelta);
 				if(y<=0)y=1;
 				if(y>=TOTAL_HEIGHT)y=TOTAL_HEIGHT-1;
 				plantIndex=(int)(Math.random()*100);
@@ -528,20 +528,21 @@ public class TileWorld extends Component implements ActionListener{
 		}
 	}*/
 	public void respond(int x, int y, boolean rightClick){ //Whenever the world is clicked, this is called.
+		System.out.println("player xy: "+player.getX()+", "+player.getY()+"; cursor xy: "+x+", "+y);
 		Item t=Inventory.getActiveTile();
 		if(t instanceof Weapon&&!rightClick){ //Strike with weapon
 			//System.out.println(x*TILE_SIZE+" "+offset*TILE_SIZE+" "+player.getX());
-			if(player.getY()-(y+yOffset/4)*TILE_SIZE>Math.abs(player.getX()-(x+xOffset/4)*TILE_SIZE)){
+			if(player.getY()-(y+yOffset/STEPS_PER_TILE)*TILE_SIZE>Math.abs(player.getX()-(x+xOffset/STEPS_PER_TILE)*TILE_SIZE)){
 				wd.appear(player.getX(), player.getY()-TILE_SIZE);
-			}else if(x+xOffset/4<player.getX()/TILE_SIZE)wd.appear(player.getX()-TILE_SIZE,player.getY());
+			}else if(x+xOffset/STEPS_PER_TILE<player.getX()/TILE_SIZE)wd.appear(player.getX()-TILE_SIZE,player.getY());
 			else wd.appear(player.getX()+TILE_SIZE,player.getY());
 		}else if(!rightClick&&t instanceof Tool&&((Tool)t).getType()==Tool.Type.beamRod){ //Special case: handle beam rod
 			wd.appearBeam();
 			((Tool)t).changeDur(-1);
 		}
-		else if(DEBUG||Math.abs((player.getX()/TILE_SIZE-xOffset/4)-x)+Math.abs((player.getY()/TILE_SIZE-yOffset/4)-y)<3){//For things that are limited-range
-			x+=xOffset/4;
-			y+=yOffset/4;
+		else if(DEBUG||Math.abs((player.getX()/TILE_SIZE-xOffset/STEPS_PER_TILE)-x)+Math.abs((player.getY()/TILE_SIZE-yOffset/STEPS_PER_TILE)-y)<3){//For things that are limited-range
+			x+=xOffset/STEPS_PER_TILE;
+			y+=yOffset/STEPS_PER_TILE;
 			if(rightClick){
 				if(tileAt(x,y)==Tile.anvil||tileAt(x,y)==Tile.forge||tileAt(x,y)==Tile.transmuteTable||tileAt(x,y)==Tile.loom)Inventory.getConvPane().setCraftMethod(tileAt(x,y));//crafting station
 				else if(tileAt(x,y)==Tile.door)tiles[currDim][x][y]=Tile.openDoor; //open and close doors
@@ -815,14 +816,14 @@ public class TileWorld extends Component implements ActionListener{
 		if(x<0||y<0||x>=TOTAL_WIDTH||y>=TOTAL_HEIGHT)return null;
 		return tiles[currDim][x][y];
 	}
-	public Liquid liquidAt(int x, int y) {
+	/*public Liquid liquidAt(int x, int y) {
 		if(x<0||y<0||x>=TOTAL_WIDTH||y>=TOTAL_HEIGHT)return null;
 		return liquids[currDim][x][y];
 	}
 
 	public void addLiquid(Liquid l, int x, int y){
 		liquids[currDim][x][y]=l;
-	}
+	}*/
 	public Image getImg(){
 		return worldImg;
 	}
@@ -830,7 +831,7 @@ public class TileWorld extends Component implements ActionListener{
 		int depth;
 		int[][]lighting=new int[SCREEN_WIDTH+1][SCREEN_HEIGHT+1];
 		for(int i=0;i<=SCREEN_WIDTH;i++){
-			if(isSolid(i+xOffset/4,yOffset/4)){
+			if(isSolid(i+xOffset/STEPS_PER_TILE,yOffset/STEPS_PER_TILE)){
 				continue;//so it doesn't expose ores at the top of the map
 			}
 			int j=-1;
@@ -841,7 +842,7 @@ public class TileWorld extends Component implements ActionListener{
 				for(int k=-depth;k<=depth;k++){
 					if(i+k>=0&&i+k<=SCREEN_WIDTH)lighting[i+k][j]++;
 				}
-				if(isSolid(i+xOffset/4,j+yOffset/4)&&tileAt(i+xOffset/4,j+yOffset/4)!=Tile.glass)depth--;//Glass should let in light, even if it is technically solid
+				if(isSolid(i+xOffset/STEPS_PER_TILE,j+yOffset/STEPS_PER_TILE)&&tileAt(i+xOffset/STEPS_PER_TILE,j+yOffset/STEPS_PER_TILE)!=Tile.glass)depth--;//Glass should let in light, even if it is technically solid
 			}while(depth>=0&&j<SCREEN_HEIGHT-1);
 		}
 		return lighting;
@@ -862,13 +863,13 @@ public class TileWorld extends Component implements ActionListener{
 		osg.fillRect(0, 0, SCREEN_WIDTH*TILE_SIZE,SCREEN_HEIGHT*TILE_SIZE);
 		int[][] lighting=getSunlight();
 		if(Inventory.currentEquip()!=null&&Inventory.currentEquip().ordinal()==5){//if wearing a mining helmet, draw a light source behind the player
-			osg.setPaint(new RadialGradientPaint((float)(player.getX())+TILE_SIZE/2-xOffset*STEP,
-					(float)(player.getY())+TILE_SIZE/2-yOffset*STEP,
+			osg.setPaint(new RadialGradientPaint((float)(player.getX())+TILE_SIZE/2-xOffset*PIXELS_PER_STEP,
+					(float)(player.getY())+TILE_SIZE/2-yOffset*PIXELS_PER_STEP,
 					2*TILE_SIZE,
 					new float[]{0,1},
 					new Color[]{new Color(200,200,255,255),new Color(200,200,255,0)}));
-			osg.fillOval(player.getX()-3*TILE_SIZE/2-xOffset*STEP, player.getY()-3*TILE_SIZE/2-yOffset*STEP, (4*TILE_SIZE), (4*TILE_SIZE));
-			int lx=player.getX()/TILE_SIZE-xOffset/4,ly=player.getY()/TILE_SIZE-yOffset/4;
+			osg.fillOval(player.getX()-3*TILE_SIZE/2-xOffset*PIXELS_PER_STEP, player.getY()-3*TILE_SIZE/2-yOffset*PIXELS_PER_STEP, (4*TILE_SIZE), (4*TILE_SIZE));
+			int lx=player.getX()/TILE_SIZE-xOffset/STEPS_PER_TILE,ly=player.getY()/TILE_SIZE-yOffset/STEPS_PER_TILE;
 			for(int i=lx-4;i<=lx+4;i++){
 				for(int j=ly-4;j<=ly+4;j++){
 					if(i>=0&&i<=SCREEN_WIDTH&&j>=0&&j<SCREEN_HEIGHT)lighting[i][j]=Math.max(0,Math.min(5,lighting[i][j]+6-Math.abs(lx-i)-Math.abs(ly-j)));
@@ -877,18 +878,18 @@ public class TileWorld extends Component implements ActionListener{
 		}
 		for(LightSource l:lights[currDim]){
 			osg.setPaint(l.getGradient());
-			osg.fillOval((int)((l.getX()-1.5)*TILE_SIZE-xOffset*STEP), (int)((l.getY()-1.5)*TILE_SIZE-yOffset*STEP), (4*TILE_SIZE), (4*TILE_SIZE));
+			osg.fillOval((int)((l.getX()-1.5)*TILE_SIZE-xOffset*PIXELS_PER_STEP), (int)((l.getY()-1.5)*TILE_SIZE-yOffset*PIXELS_PER_STEP), (4*TILE_SIZE), (4*TILE_SIZE));
 
 			//if(l.getX()>0&&tiles[currDim][l.getX()][l.getY()]==Tile.discoBeacon)l.nextRainbowColor();
-			int lx=l.getX()-xOffset/4,ly=l.getY()-yOffset/4;
+			int lx=l.getX()-xOffset/STEPS_PER_TILE,ly=l.getY()-yOffset/STEPS_PER_TILE;
 			for(int i=lx-4;i<=lx+4;i++){
 				for(int j=ly-4;j<=ly+4;j++){
 					if(i>=0&&i<=SCREEN_WIDTH&&j>=0&&j<SCREEN_HEIGHT)lighting[i][j]=Math.max(0,Math.min(5,lighting[i][j]+6-Math.abs(lx-i)-Math.abs(ly-j)));
 				}
 			}
 		}
-		for(int i=xOffset/4;i<=xOffset/4+SCREEN_WIDTH;i++){
-			for(int j=SCREEN_HEIGHT+yOffset/4;j>=yOffset/4;j--){//iterate from bottom to top to fix gravity?
+		for(int i=xOffset/STEPS_PER_TILE;i<=xOffset/STEPS_PER_TILE+SCREEN_WIDTH;i++){
+			for(int j=SCREEN_HEIGHT+yOffset/STEPS_PER_TILE;j>=yOffset/STEPS_PER_TILE;j--){//iterate from bottom to top to fix gravity?
 				Tile t=tiles[currDim][i][j];
 				if(t!=null){
 					if(t==Tile.stone&&j<TOTAL_HEIGHT-1&&tiles[currDim][i][j+1]==Tile.moss){
@@ -907,8 +908,8 @@ public class TileWorld extends Component implements ActionListener{
 					}*/
 					else if(t.type!=Tile.PLANT&&t.type!=Tile.TREE_0){//if it's a plant draw the plant image instead
 						if(DEBUG&&keyboard.pressed.contains(KeyEvent.VK_SPACE)){
-							osg.drawImage(t.getImg(), TILE_SIZE*i-xOffset*STEP, TILE_SIZE*j-yOffset*STEP, null);
-						}else osg.drawImage(t.getDarkenedImg(lighting[i-xOffset/4][j-yOffset/4]), TILE_SIZE*i-xOffset*STEP, TILE_SIZE*j-yOffset*STEP, null);
+							osg.drawImage(t.getImg(), TILE_SIZE*i-xOffset*PIXELS_PER_STEP, TILE_SIZE*j-yOffset*PIXELS_PER_STEP, null);
+						}else osg.drawImage(t.getDarkenedImg(lighting[i-xOffset/STEPS_PER_TILE][j-yOffset/STEPS_PER_TILE]), TILE_SIZE*i-xOffset*PIXELS_PER_STEP, TILE_SIZE*j-yOffset*PIXELS_PER_STEP, null);
 					}
 					//else if(currDim==1&&tiles[currDim][i][j]==null&&Math.random()<.05)osg.drawImage(Tile.sparkle, TILE_SIZE*(i-offset), TILE_SIZE*j, null);
 				}/*else{
@@ -930,12 +931,12 @@ public class TileWorld extends Component implements ActionListener{
 		for(Plant p:plants[currDim]){//TODO update so it only draws plants on screen
 			if(p!=null)osg.drawImage(
 					p.getImg(),
-					TILE_SIZE*p.getX()-xOffset*STEP,
-					TILE_SIZE*(p.getY()+1)-p.getImg().getHeight()-yOffset*STEP,
+					TILE_SIZE*p.getX()-xOffset*PIXELS_PER_STEP,
+					TILE_SIZE*(p.getY()+1)-p.getImg().getHeight()-yOffset*PIXELS_PER_STEP,
 					null);
 		}
 		/*int liquidTotal=0;
-		for(int i=offset/4;i<=offset/4+SCREEN_WIDTH;i++){
+		for(int i=offset/STEP;i<=offset/STEP+SCREEN_WIDTH;i++){
 			for(int j=HEIGHT-1;j>=0;j--){
 				if(liquids[currDim][i][j]!=null){
 					Liquid l=liquids[currDim][i][j];
@@ -964,19 +965,26 @@ public class TileWorld extends Component implements ActionListener{
 				creatures[currDim].remove(c);
 				i--;
 			}
-			else osg.drawImage(c.getImg(), c.getX()-(xOffset*STEP), c.getY()-(yOffset*STEP), null);
+			else osg.drawImage(c.getImg(), c.getX()-(xOffset*PIXELS_PER_STEP), c.getY()-(yOffset*PIXELS_PER_STEP), null);
 		}
 		//Can put code from SandKeys.keyPressed here to increase framerate and make ninja suit work.
-		osg.drawImage(player.getImg(), player.getX()-(xOffset*STEP), player.getY()+TILE_SIZE-player.getImg().getHeight()-(yOffset*STEP), null);
-		if(Inventory.currentEquip()!=null&&Inventory.currentEquip().ordinal()==4) osg.drawImage(Inventory.currentEquip().getImg(), player.getX()-(xOffset*STEP), player.getY()-TILE_SIZE/2-(yOffset*STEP), null);//draw the steampunk hat
+		osg.drawImage(player.getImg(), player.getX()-(xOffset*PIXELS_PER_STEP), player.getY()+TILE_SIZE-player.getImg().getHeight()-(yOffset*PIXELS_PER_STEP), null);
+		if(Inventory.currentEquip()!=null&&Inventory.currentEquip().ordinal()==4) osg.drawImage(Inventory.currentEquip().getImg(), player.getX()-(xOffset*PIXELS_PER_STEP), player.getY()-TILE_SIZE/2-(yOffset*PIXELS_PER_STEP), null);//draw the steampunk hat
 		for(int i=0;i<player.getHealth();i++)osg.drawImage(healthImg,TILE_SIZE*i,0,null);
 		if(wd.isVisible()){//draw the weapon if visible
 			if(wd.isMagic()){
-				wd.goToXY((player.getX()+TILE_SIZE*(c.getX()+xOffset/4))/2,(player.getY()+TILE_SIZE*(c.getY()+yOffset/4))/2);
+				wd.goToXY((player.getX()+TILE_SIZE*(c.getX()+xOffset/STEPS_PER_TILE))/2,(player.getY()+TILE_SIZE*(c.getY()+yOffset/STEPS_PER_TILE))/2);
 			}
-			osg.drawImage(wd.display(), wd.getX()-(xOffset*STEP), wd.getY()-(yOffset*STEP), null);
+			osg.drawImage(wd.display(), wd.getX()-(xOffset*PIXELS_PER_STEP), wd.getY()-(yOffset*PIXELS_PER_STEP), null);
 		}
-		if(c.isVisible())osg.drawImage(Cursor.img,c.getX()*TILE_SIZE-(xOffset*STEP)%TILE_SIZE,c.getY()*TILE_SIZE-(yOffset*STEP)%TILE_SIZE,null);
+		if(c.isVisible())osg.drawImage(Cursor.img,c.getX()*TILE_SIZE-(xOffset*PIXELS_PER_STEP)%TILE_SIZE,c.getY()*TILE_SIZE-(yOffset*PIXELS_PER_STEP)%TILE_SIZE,null);
+		
+		if(DEBUG){
+			osg.setColor(Color.black);
+			osg.drawString("x offset: "+xOffset, TILE_SIZE, 2*TILE_SIZE);
+			osg.drawString("y offset: "+yOffset, TILE_SIZE, 3*TILE_SIZE);
+		}
+		
 		getGraphics().drawImage(worldImg, 0, 0, null);
 	}
 	public void writeToFile(){
@@ -1031,9 +1039,9 @@ public class TileWorld extends Component implements ActionListener{
 			String[] input=read.readLine().split(",");
 			currDim=Integer.parseInt(input[0]); //player coordinates
 			player.goTo(Integer.parseInt(input[1]),Integer.parseInt(input[2]));
-			xOffset=(Math.min(player.getX()/TILE_SIZE,TOTAL_WIDTH)-SCREEN_WIDTH/2)*STEP;
+			xOffset=(Math.min(player.getX()/TILE_SIZE,TOTAL_WIDTH)-SCREEN_WIDTH/2)*STEPS_PER_TILE;
 			if(xOffset<0)xOffset=0;
-			yOffset=(Math.min(player.getY()/TILE_SIZE,TOTAL_HEIGHT)-SCREEN_HEIGHT/2)*STEP;
+			yOffset=(Math.min(player.getY()/TILE_SIZE,TOTAL_HEIGHT)-SCREEN_HEIGHT/2)*STEPS_PER_TILE;
 			if(yOffset<0)yOffset=0;
 			time=Math.abs(Integer.parseInt(input[3]));
 			sunSetting=Integer.parseInt(input[3])<0;
