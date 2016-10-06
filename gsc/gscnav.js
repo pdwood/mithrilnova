@@ -16,7 +16,7 @@ function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
 }
 function jump(){
-	setPanel(document.getElementById("jump").elements[0].value);
+	window.location.href = "?panel="+document.getElementById("jump").elements[0].value;
 }
 function init(){
 	var url = window.location.href;
