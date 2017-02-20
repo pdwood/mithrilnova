@@ -8,15 +8,15 @@ function derp(){
 function setPanel(panel){
 	document.getElementById('panel').src = panel + ".gif";
 	document.getElementById("jump").elements[0].value = panel;
-    //document.getElementById("comictext").src = panel + ".html";
-	document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/?panel="+getPanelNumber();
-	document.getElementById("permalink").href = "?panel="+getPanelNumber();
+	document.getElementById("permalink").href = "#panel="+getPanelNumber();
+	document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/#panel="+getPanelNumber();
+	window.location.replace("#panel="+getPanelNumber());
 }
 function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
 }
 function jump(){
-	window.location.href = "?panel="+document.getElementById("jump").elements[0].value;
+	setPanel(getPanelNumber()+document.getElementById("jump").elements[0].value);
 }
 function init(){
 	var url = window.location.href;
