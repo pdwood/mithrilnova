@@ -8,9 +8,9 @@ function derp(){
 function setPanel(panel){
 	document.getElementById('panel').src = panel + ".gif";
 	document.getElementById("jump").elements[0].value = panel;
-	document.getElementById("permalink").href = "#panel="+getPanelNumber();
-	document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/#panel="+getPanelNumber();
-	window.location.replace("#panel="+getPanelNumber());
+	document.getElementById("permalink").href = "#panel="+panel;
+	document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/#panel="+panel;
+	window.location.replace("#panel="+panel);
 }
 function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
