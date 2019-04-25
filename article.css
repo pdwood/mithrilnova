@@ -1,0 +1,24 @@
+
+.figure {
+	margin: 0 auto;
+	width: 300px;
+	font-weight: bold;
+	font-family: Nyala, Helvetica, sans-serif;
+}
+
+p {
+	font-family: Candara, Helvetica, sans-serif;
+	width: 50%;
+	margin: 0 auto;
+	padding-top: 10pt;
+	padding-bottom: 10pt;
+}
+
+h1 {
+	font-family: Nyala, Helvetica, sans-serif;
+	width: 66%;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 20pt;
+	padding-top: 20pt;
+}
