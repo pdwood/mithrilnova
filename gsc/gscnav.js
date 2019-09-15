@@ -6,12 +6,18 @@ function getPanelNumber(){
 	document.getElementById('derp').innerHTML += "derp";
 }*/
 function setPanel(panel){
-	document.getElementById('panel').src = panel + ".gif";
-	document.getElementById("jump").elements[0].value = panel;
-	document.getElementById("permalink").href = "#panel="+panel;
-	document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/#panel="+panel;
-	fetch(panel+".txt").then(r=>r.text()).then(t=>document.getElementById("narration").innerHTML = t)
-	window.location.replace("#panel="+panel);
+
+	u = function(r){
+		document.getElementById('panel').src = panel + ".gif";
+		document.getElementById("jump").elements[0].value = panel;
+		p=document.getElementById("permalink");
+		p.href = "#panel="+panel;
+		p.innerHTML = "mithrilnova.me/gsc/#panel="+panel;
+		console.log(r)
+		document.getElementById("narration").innerHTML = r.text()
+		window.location.replace("#panel="+panel);
+	}
+	fetch(panel+".txt").then(u)
 }
 function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
