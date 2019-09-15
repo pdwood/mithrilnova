@@ -18,7 +18,7 @@ function setPanel(panel){
 		}
 		window.location.replace("#panel="+panel);
 	}
-	fetch(panel+".txt")..then(r=>[r.status,r.text()]).then(u)
+	fetch(panel+".txt").then(r=>[r.status,r.text()]).then(u)
 }
 function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
