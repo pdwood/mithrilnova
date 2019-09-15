@@ -30,12 +30,12 @@
 		background: cyan;
 	}
 	a:link{
-		color: #41d400;
+		color: #aaaaaa
 	}
 	a:visited{
-		color: #ff9519;
+		color: #8e8e8e;
 	}
 	a:hover{
-		color: #4fff00;
+		color: #bebebe;
 	}
 </style>
