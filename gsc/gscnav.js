@@ -2,14 +2,15 @@ function getPanelNumber(){
 	var src = document.getElementById('panel').src;
 	return parseInt(src.substring(src.lastIndexOf('/')+1,src.lastIndexOf('.')));
 }
-function derp(){
+/*function derp(){
 	document.getElementById('derp').innerHTML += "derp";
-}
+}*/
 function setPanel(panel){
 	document.getElementById('panel').src = panel + ".gif";
 	document.getElementById("jump").elements[0].value = panel;
 	document.getElementById("permalink").href = "#panel="+panel;
 	document.getElementById("permalink").innerHTML = "mithrilnova.me/gsc/#panel="+panel;
+	fetch(panel+".txt").then(r=>r.text()).then(t=>document.getElementById("narration").innerHTML = t)
 	window.location.replace("#panel="+panel);
 }
 function changePanel(offset){
