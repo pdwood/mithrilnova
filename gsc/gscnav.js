@@ -13,11 +13,12 @@ function setPanel(panel){
 		p=document.getElementById("permalink");
 		p.href = "#panel="+panel;
 		p.innerHTML = "mithrilnova.me/gsc/#panel="+panel;
-		console.log(r)
-		document.getElementById("narration").innerHTML = r.text()
+		if(r[0] === 200){
+			document.getElementById("narration").innerHTML = r[1]
+		}
 		window.location.replace("#panel="+panel);
 	}
-	fetch(panel+".txt").then(u)
+	fetch(panel+".txt")..then(r=>[r.status,r.text()]).then(u)
 }
 function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
