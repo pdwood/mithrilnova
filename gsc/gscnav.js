@@ -12,8 +12,11 @@ function setPanel(panel){
 		p=document.getElementById("permalink");
 		p.href = "#panel="+panel;
 		p.innerHTML = "mithrilnova.me/gsc/#panel="+panel;
+		n = document.getElementById("narration")
 		if(r.status === 200){
-			document.getElementById("narration").innerHTML = await r.text()
+			n.innerHTML = await r.text()
+		}else{
+			n.innerHTML = ""
 		}
 		window.location.replace("#panel="+panel);
 	})

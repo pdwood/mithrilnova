@@ -1,1 +1,1 @@
-<font color=00b6b7>One, my name is Voben.<font>
+<p class=voben>One, my name is Voben.</p>
