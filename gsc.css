@@ -29,6 +29,10 @@
 	a.homepage-button:hover, a.homepage-button:active {
 		background: cyan;
 	}
+	a.corner-button {
+		position: absolute;
+		left: 20px;
+	}
 	a:link{
 		color: #aaaaaa
 	}

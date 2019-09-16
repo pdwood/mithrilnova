@@ -6,19 +6,17 @@ function getPanelNumber(){
 	document.getElementById('derp').innerHTML += "derp";
 }*/
 function setPanel(panel){
-
-	u = function(r){
+	fetch(panel+".txt").then(r=>{
 		document.getElementById('panel').src = panel + ".gif";
 		document.getElementById("jump").elements[0].value = panel;
 		p=document.getElementById("permalink");
 		p.href = "#panel="+panel;
 		p.innerHTML = "mithrilnova.me/gsc/#panel="+panel;
-		if(r[0] === 200){
-			document.getElementById("narration").innerHTML = r[1]
+		if(r.status === 200){
+			document.getElementById("narration").innerHTML = await r.text()
 		}
 		window.location.replace("#panel="+panel);
-	}
-	fetch(panel+".txt").then(r=>[r.status,r.text()]).then(u)
+	})
 }
 function changePanel(offset){
 	setPanel(getPanelNumber()+offset);
