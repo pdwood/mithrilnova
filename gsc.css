@@ -31,7 +31,7 @@
 	}
 	a.corner-button {
 		position: absolute;
-		left: 20px;
+		right: 20px;
 	}
 	a:link{
 		color: #aaaaaa
