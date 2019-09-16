@@ -6,7 +6,7 @@ function getPanelNumber(){
 	document.getElementById('derp').innerHTML += "derp";
 }*/
 function setPanel(panel){
-	fetch(panel+".txt").then(r=>{
+	fetch(panel+".txt").then(async r=>{
 		document.getElementById('panel').src = panel + ".gif";
 		document.getElementById("jump").elements[0].value = panel;
 		p=document.getElementById("permalink");
