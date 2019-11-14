@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -22,21 +21,7 @@
      id="base"
      pagecolor="#ffffff"
      bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="165.54993"
-     inkscape:cy="69.056704"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="987"
-     inkscape:window-x="-8"
-     inkscape:window-y="22"
-     inkscape:window-maximized="1"
-     showguides="false" />
+     borderopacity="1.0"/>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -59,237 +44,114 @@
        width="1052.3622"
        height="1052.3622"
        x="-154.13385"
-       y="-4.978486e-005" />
+       y="0" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff4d00;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 650.31935,117.74543 c 41.73869,1.15822 58.73226,-31.041947 72.09183,-66.976737 18.4243,40.079127 16.80787,53.581407 45.53168,53.581407 6.60603,45.41912 -39.97875,111.08317 -77.78332,107.16278"
-       id="path4136"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4136"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff4d00;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 705.33678,144.53611 c 15.59888,14.9477 45.33226,51.46665 60.70892,66.9768"
-       id="path4138"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4138"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#694f00;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -98.647877,919.02715 c 25.805043,-32.34852 44.930043,-66.72206 79.884429,-107.89048 43.12254,51.14554 53.989794,89.59519 84.742308,112.24971"
-       id="path4144"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4144"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#694f00;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -85.152735,819.85513 c 26.275274,33.58792 41.112669,74.30825 62.612113,113.33961 24.3310702,-33.31284 43.528928,-62.30011 76.64589,-99.17221"
-       id="path4146"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4146"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#8080ff;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -110.82013,364.83192 44.763244,59.88775 -0.09296,-77.94075 c 46.608876,159.78839 105.296317,52.46117 80.074065,5.72849 -20.7669303,-38.47772 -54.349001,23.11212 -22.6070558,30.41589"
-       id="path4157"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccsc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4157"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#009c9c;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 266.81103,272.34372 0,701.57492"
-       id="path4167"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4167"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff4d00;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 722.83465,272.34372 0,701.57492"
-       id="path4171"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4171"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#8080ff;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 126.49607,395.11932 701.5748,0"
-       id="path4173"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4173"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#694f00;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 126.49607,851.14294 701.5748,0"
-       id="path4175"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4175"/>
     <path
        style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 126.49607,623.13115 701.5748,0"
-       id="path4179"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4179"/>
     <path
        style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 494.82284,272.34372 0,701.57492"
-       id="path4177"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4177"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M 18.868813,542.13016 C 115.75686,590.63558 -120.29539,679.18441 -39.751936,713.70303"
-       id="path4181"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4181"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M -1.1480276,629.34635 28.877234,663.66093"
-       id="path4183"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4183"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 37.813326,662.94606 c -7.103579,1.68469 -16.489597,11.72133 -17.872191,20.01685 -4.21899,25.31391 28.15961,30.18213 37.889028,10.72328 11.436753,-22.87352 -2.775058,-34.82925 -20.016837,-30.74013 z"
-       id="path4185"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ssss"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4185"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M 472.58299,224.85618 C 375.69494,176.35077 611.74719,87.801937 531.2037,53.283309"
-       id="path4181-3"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4181-3"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M 492.59979,137.63999 462.57457,103.32542"
-       id="path4183-3"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4183-3"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:17.53936958;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 453.63847,104.04028 c 7.10355,-1.68468 16.4896,-11.72133 17.87216,-20.016845 4.21899,-25.313908 -28.1596,-30.182129 -37.889,-10.723276 -11.43676,22.873518 2.77504,34.829251 20.01684,30.740121 z"
-       id="path4185-9"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ssss"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4185-9"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#54b600;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 269.39388,840.44147 c -64.18399,44.57755 -44.76532,-90.92012 1.77172,-53.1524 20.12004,16.32886 14.25077,32.56748 56.6958,70.86949 31.5192,28.44286 60.08111,-75.78731 -1.77175,-58.46738"
-       id="path4152"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cssc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4152"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#54b600;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 301.28526,735.9085 c -11.29862,57.50012 -5.31524,114.23002 -5.31524,171.8594"
-       id="path4154"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4154"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 708.70595,799.42284 72.38309,-71.68597 0,144.54642 55.93235,-55.39382"
-       id="path4140"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4140"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 781.08904,806.61539 -71.28635,70.59966"
-       id="path4142"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4142"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#a000ff;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 721.59858,342.54106 112.75307,0"
-       id="path4162"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4162"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#a000ff;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 794.26167,302.45106 -37.58435,102.73062 45.10123,-22.55065 -30.06746,80.18003"
-       id="path4164"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4164"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#80e5ff;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 242.69032,407.72064 0,-80.28524 49.99724,47.57643 46.42598,-47.57643 0,78.30287"
-       id="path4159"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4159"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#80e5ff;stroke-width:17.53936958;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 292.68756,373.0295 0,80.28516"
-       id="path4161"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4161"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#009c9c;stroke-width:17.53936958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 280.18459,81.848661 c -5.5744,-10.235436 -25.0465,0.326583 -32.88481,12.867988 -25.78905,41.262501 67.24664,50.225531 32.88481,-12.867988 z"
-       id="path4163-4"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sss"
-       inkscape:export-filename="C:\Users\woodp\Documents\RPG Stuff\secondary_elements.png"
-       inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400" />
+       id="path4163-4"/>
     <path
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#009c9c;stroke-width:17.53936958;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 173.31713,123.0536 c 51.26611,-9.61682 39.40209,74.79507 89.50408,73.67771 59.22252,-1.32081 36.32666,-75.51548 91.56375,-71.99558"
-       id="path4180"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csc" />
+       id="path4180"/>
   </g>
 </svg>

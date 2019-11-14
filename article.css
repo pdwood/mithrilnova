@@ -22,3 +22,20 @@ h1 {
 	padding-bottom: 20pt;
 	padding-top: 20pt;
 }
+
+h2 {
+	font-family: Nyala, Helvetica, sans-serif;
+	width: 66%;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 10pt;
+	padding-top: 10pt;
+}
+
+h3 {
+	font-family: Nyala, Helvetica, sans-serif;
+	width: 50%;
+	margin: 0 auto;
+	padding-bottom: 5pt;
+	padding-top: 5pt;
+}
