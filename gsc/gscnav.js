@@ -31,6 +31,8 @@ function init(){
 	var url = window.location.href;
 	var number = parseInt(url.substring(url.lastIndexOf('=')+1));
 	setPanel(isNaN(number)?1:number);
+	document.getElementById("jump_b").addEventListener("click", jump);
+	document.getElementById("jump").action = jump;
 }
 function keyRespond(e){
 	if(!e) e=window.event;
